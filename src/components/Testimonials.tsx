@@ -32,19 +32,19 @@ const Testimonials = () => {
     {
       name: "Carlos M.",
       rating: 5,
-      text: "La calidad es excepcional. Los acabados son perfectos y se nota que es un producto premium. Llegó súper rápido con Amazon Prime.",
+      text: "The quality is exceptional. The finishes are perfect and you can tell it's a premium product. It arrived super fast with Amazon Prime.",
       verified: true
     },
     {
       name: "Ana R.",
       rating: 5,
-      text: "Exactamente lo que esperaba. La madera es hermosa y todo está muy bien organizado. Definitivamente vale la pena la inversión.",
+      text: "Exactly what I expected. The wood is beautiful and everything is very well organized. Definitely worth the investment.",
       verified: true
     },
     {
       name: "Miguel T.",
       rating: 5,
-      text: "Impresionante calidad y diseño. Los compartimentos están perfectamente diseñados. Una compra que no te arrepentirás.",
+      text: "Impressive quality and design. The compartments are perfectly designed. A purchase you won't regret.",
       verified: true
     }
   ];
@@ -63,11 +63,11 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
-            Lo que dicen nuestros <span className="font-normal">clientes</span>
+            What our <span className="font-normal">customers</span> say
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
           <p className="text-lg text-neutral-600 font-light">
-            Miles de clientes satisfechos han elegido Can Maderax
+            Thousands of satisfied customers have chosen Can Maderax
           </p>
         </div>
         
@@ -98,7 +98,7 @@ const Testimonials = () => {
                   </p>
                   {testimonial.verified && (
                     <p className="text-sm text-green-600 mt-1">
-                      ✓ Compra verificada
+                      ✓ Verified purchase
                     </p>
                   )}
                 </div>
@@ -119,7 +119,7 @@ const Testimonials = () => {
               {renderStars(5)}
             </div>
             <span className="text-2xl font-light text-neutral-900">4.8/5</span>
-            <span className="text-neutral-600 font-light">basado en +200 reseñas en Amazon</span>
+            <span className="text-neutral-600 font-light">based on +200 Amazon reviews</span>
           </div>
         </div>
       </div>

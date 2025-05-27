@@ -48,7 +48,7 @@ const Hero = () => {
                   <div className="relative">
                     <img 
                       src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
-                      alt="Can Maderax - Caja de madera premium"
+                      alt="Can Maderax - Premium wooden stash box"
                       className="w-full h-auto rounded-2xl shadow-lg transform group-hover:scale-[1.02] transition-transform duration-700"
                     />
                     
@@ -57,7 +57,7 @@ const Hero = () => {
                       <div className="grid grid-cols-3 gap-4 text-center">
                         <div className="flex flex-col items-center">
                           <Shield className="w-5 h-5 text-amber-600 mb-1" />
-                          <span className="text-xs text-neutral-600 font-medium">Garantía</span>
+                          <span className="text-xs text-neutral-600 font-medium">Warranty</span>
                         </div>
                         <div className="flex flex-col items-center">
                           <Award className="w-5 h-5 text-amber-600 mb-1" />
@@ -65,7 +65,7 @@ const Hero = () => {
                         </div>
                         <div className="flex flex-col items-center">
                           <Truck className="w-5 h-5 text-amber-600 mb-1" />
-                          <span className="text-xs text-neutral-600 font-medium">Envío gratis</span>
+                          <span className="text-xs text-neutral-600 font-medium">Free shipping</span>
                         </div>
                       </div>
                     </div>
@@ -84,7 +84,7 @@ const Hero = () => {
                 <div className="space-y-6">
                   <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 border border-amber-200 text-amber-800 px-4 py-2 rounded-full text-sm font-medium">
                     <Star className="w-4 h-4 fill-current" />
-                    Producto Premium
+                    Premium Product
                   </div>
                   
                   <div className="space-y-4">
@@ -98,7 +98,7 @@ const Hero = () => {
                 {/* Product description */}
                 <div className="space-y-4">
                   <p className="text-xl text-neutral-700 leading-relaxed font-light">
-                    Elegancia natural que combina diseño minimalista con funcionalidad excepcional.
+                    Natural elegance that combines minimalist design with exceptional functionality.
                   </p>
                   
                   <div className="flex items-center gap-4 text-neutral-600">
@@ -108,7 +108,7 @@ const Hero = () => {
                           <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
-                      <span className="text-sm ml-2">Calidad premium</span>
+                      <span className="text-sm ml-2">Premium quality</span>
                     </div>
                   </div>
                 </div>
@@ -116,9 +116,9 @@ const Hero = () => {
                 {/* Key features */}
                 <div className="space-y-3">
                   {[
-                    "Material de bambú premium",
-                    "Kit completo incluido",
-                    "Diseño funcional y elegante"
+                    "Premium bamboo material",
+                    "Complete kit included",
+                    "Functional and elegant design"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
@@ -134,18 +134,18 @@ const Hero = () => {
                     size="lg"
                     className="w-full bg-gradient-to-r from-neutral-900 to-neutral-800 hover:from-neutral-800 hover:to-neutral-700 text-white px-8 py-6 text-lg font-medium rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                   >
-                    Comprar en Amazon
+                    Buy on Amazon
                     <ExternalLink className="ml-2 w-5 h-5" />
                   </Button>
                   
                   <div className="flex items-center justify-center gap-6 text-sm text-neutral-600">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span>Disponible ahora</span>
+                      <span>Available now</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <Truck className="w-4 h-4" />
-                      <span>Envío Prime</span>
+                      <span>Prime shipping</span>
                     </div>
                   </div>
                 </div>

@@ -31,23 +31,23 @@ const Benefits = () => {
   const benefits = [
     {
       icon: <Gem className="w-6 h-6" />,
-      title: "Artesanía Premium",
-      description: "Fabricada con bambú de alta calidad y acabados profesionales para una experiencia excepcional."
+      title: "Premium Craftsmanship",
+      description: "Made with high-quality bamboo and professional finishes for an exceptional experience."
     },
     {
       icon: <Package className="w-6 h-6" />,
-      title: "Kit Completo",
-      description: "Incluye todos los accesorios esenciales organizados en compartimentos diseñados específicamente."
+      title: "Complete Kit",
+      description: "Includes all essential accessories organized in specifically designed compartments."
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Diseño Elegante",
-      description: "Combinación perfecta de funcionalidad y estilo minimalista que habla de sofisticación."
+      title: "Elegant Design",
+      description: "Perfect combination of functionality and minimalist style that speaks of sophistication."
     },
     {
       icon: <Star className="w-6 h-6" />,
-      title: "Calidad Garantizada",
-      description: "Respaldado por Amazon con garantía de satisfacción y miles de clientes satisfechos."
+      title: "Quality Guaranteed",
+      description: "Backed by Amazon with satisfaction guarantee and thousands of satisfied customers."
     }
   ];
 
@@ -56,11 +56,11 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
-            ¿Por qué elegir <span className="font-normal">Can Maderax</span>?
+            Why choose <span className="font-normal">Can Maderax</span>?
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Una experiencia premium que eleva tu rutina diaria con elegancia natural y funcionalidad incomparable.
+            A premium experience that elevates your daily routine with natural elegance and unmatched functionality.
           </p>
         </div>
         

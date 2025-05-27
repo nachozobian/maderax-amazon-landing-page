@@ -37,19 +37,19 @@ const ProductGallery = () => {
   const images = [
     {
       src: "/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png",
-      alt: "Can Maderax abierta mostrando el interior"
+      alt: "Can Maderax open showing the interior"
     },
     {
       src: "/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png",
-      alt: "Can Maderax con todos los accesorios"
+      alt: "Can Maderax with all accessories"
     },
     {
       src: "/lovable-uploads/b12ac5ae-b367-4c83-908f-8a50dbf25422.png",
-      alt: "Accesorios incluidos en Can Maderax"
+      alt: "Accessories included in Can Maderax"
     },
     {
       src: "/lovable-uploads/357448db-3e2d-4fc3-83ef-168433ed47ba.png",
-      alt: "Vista detallada del interior de Can Maderax"
+      alt: "Detailed view of Can Maderax interior"
     }
   ];
 
@@ -64,11 +64,11 @@ const ProductGallery = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl lg:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
-            Diseño y Calidad en <span className="font-normal">Cada Detalle</span>
+            Design and Quality in <span className="font-normal">Every Detail</span>
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Explora cada aspecto de Can Maderax y descubre la elección preferida de miles de usuarios.
+            Explore every aspect of Can Maderax and discover the preferred choice of thousands of users.
           </p>
         </div>
         
@@ -98,14 +98,14 @@ const ProductGallery = () => {
         
         <div className="bg-white border border-neutral-200 rounded-3xl p-12 max-w-5xl mx-auto shadow-sm">
           <h3 className="text-3xl font-light text-neutral-900 mb-8 text-center">
-            Kit <span className="font-normal">Completo Incluido</span>
+            Complete <span className="font-normal">Kit Included</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               {[
-                "Caja de bambú premium con tapa magnética",
-                "3 frascos de vidrio con tapas de bambú",
-                "Herramientas de acero inoxidable"
+                "Premium bamboo box with magnetic lid",
+                "3 glass jars with bamboo lids",
+                "Stainless steel tools"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -115,9 +115,9 @@ const ProductGallery = () => {
             </div>
             <div className="space-y-4">
               {[
-                "Compartimentos organizadores",
-                "Accesorios adicionales incluidos",
-                "Manual de uso detallado"
+                "Organizing compartments",
+                "Additional accessories included",
+                "Detailed user manual"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>

@@ -34,26 +34,26 @@ const FinalCTA = () => {
           <div className="space-y-6 mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-400 px-4 py-2 rounded-full text-sm font-medium">
               <Star className="w-4 h-4 fill-current" />
-              Oferta limitada
+              Limited offer
             </div>
             
             <h2 className="text-5xl lg:text-6xl font-light tracking-tight">
-              ¿Listo para elevar tu <span className="font-semibold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">experiencia</span>?
+              Ready to elevate your <span className="font-semibold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">experience</span>?
             </h2>
             
             <div className="w-16 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto rounded-full"></div>
             
             <p className="text-xl opacity-80 font-light max-w-2xl mx-auto">
-              Únete a miles de clientes satisfechos que ya disfrutan de la calidad premium de Can Maderax
+              Join thousands of satisfied customers who already enjoy the premium quality of Can Maderax
             </p>
           </div>
           
           {/* Benefits grid */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { icon: <Truck className="w-6 h-6" />, title: "Envío gratis", subtitle: "Con Amazon Prime" },
-              { icon: <Shield className="w-6 h-6" />, title: "Garantía", subtitle: "Amazon A-Z" },
-              { icon: <Clock className="w-6 h-6" />, title: "Entrega rápida", subtitle: "24-48 horas" }
+              { icon: <Truck className="w-6 h-6" />, title: "Free shipping", subtitle: "With Amazon Prime" },
+              { icon: <Shield className="w-6 h-6" />, title: "Warranty", subtitle: "Amazon A-Z" },
+              { icon: <Clock className="w-6 h-6" />, title: "Fast delivery", subtitle: "24-48 hours" }
             ].map((item, index) => (
               <div 
                 key={index}
@@ -74,27 +74,27 @@ const FinalCTA = () => {
                 size="lg"
                 className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-12 py-6 text-xl font-semibold rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 w-full md:w-auto"
               >
-                Comprar Ahora en Amazon
+                Buy Now on Amazon
                 <ExternalLink className="ml-3 w-6 h-6" />
               </Button>
               
               <p className="text-lg opacity-70 font-light mt-4">
-                ⏰ <strong className="font-semibold text-amber-400">Oferta limitada</strong> - No dejes pasar esta oportunidad
+                ⏰ <strong className="font-semibold text-amber-400">Limited offer</strong> - Don't miss this opportunity
               </p>
             </div>
             
             <div className="flex items-center justify-center gap-8 text-sm opacity-60 font-light">
               <span className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                Pago seguro
+                Secure payment
               </span>
               <span className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                Devoluciones fáciles
+                Easy returns
               </span>
               <span className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                Soporte 24/7
+                24/7 support
               </span>
             </div>
           </div>
