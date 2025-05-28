@@ -131,7 +131,7 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* Product showcase - Elevated presentation */}
+            {/* Product showcase - Elevated presentation with video */}
             <div className="lg:col-span-6 order-1 lg:order-2">
               <div 
                 className="relative group opacity-0 animate-fade-in"
@@ -157,12 +157,16 @@ const Hero = () => {
                       </div>
                     </div>
                     
-                    {/* Product image with premium treatment - removed animate-float */}
+                    {/* Product video with premium treatment */}
                     <div className="relative overflow-hidden rounded-3xl">
-                      <img 
-                        src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
+                      <video 
+                        src="/hero-video.mp4"
                         alt="Can Maderax - Artisan bamboo collection"
                         className="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-1000"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
                       />
                       
                       {/* Subtle overlay for depth */}
