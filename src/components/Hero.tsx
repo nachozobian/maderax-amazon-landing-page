@@ -161,7 +161,7 @@ const Hero = () => {
                     <div className="relative overflow-hidden rounded-3xl">
                       <video 
                         src="/hero-video.mp4"
-                        alt="Can Maderax - Artisan bamboo collection"
+                        title="Can Maderax - Artisan bamboo collection"
                         className="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-1000"
                         autoPlay
                         muted
