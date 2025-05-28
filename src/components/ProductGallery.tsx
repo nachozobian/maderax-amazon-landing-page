@@ -1,17 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Package, Star } from "lucide-react";
+import { CheckCircle, Package } from "lucide-react";
 
 const ProductGallery = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [visibleImages, setVisibleImages] = useState<boolean[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,88 +36,88 @@ const ProductGallery = () => {
   const images = [
     {
       src: "/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png",
-      alt: "Can Maderax open showing the interior compartments"
+      alt: "Can Maderax interior compartment design and organization system"
     },
     {
       src: "/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png",
-      alt: "Can Maderax complete kit with all accessories"
+      alt: "Complete Can Maderax professional kit with all included accessories"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-neutral-50 to-white relative overflow-hidden">
-      {/* Parallax background element */}
-      <div 
-        className="absolute top-0 right-0 w-96 h-96 bg-orange-100 rounded-full blur-3xl opacity-30"
-        style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-      ></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-            See why Amazon customers <span className="font-bold text-orange-600">choose quality</span>
+          <h2 className="text-4xl font-serif text-slate-900 mb-6 tracking-tight">
+            Professional Design Details
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
-            Every detail crafted for perfection. Every component designed for functionality.
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Precision-engineered components and thoughtful design elements deliver superior functionality and aesthetic appeal.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           {images.map((image, index) => (
             <div 
               key={index}
               data-index={index}
-              className={`gallery-item group relative overflow-hidden rounded-2xl transition-all duration-700 ${
+              className={`gallery-item ${
                 visibleImages[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-white border border-neutral-200 rounded-2xl">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-6">
                 <img 
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-auto rounded-md"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
             </div>
           ))}
         </div>
         
-        {/* What's included section */}
-        <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 rounded-3xl p-8 max-w-4xl mx-auto mb-12">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-orange-100 border border-orange-300 text-orange-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+        {/* Technical specifications */}
+        <div className="bg-slate-50 border border-slate-200 rounded-lg p-10 max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-slate-100 border border-slate-300 text-slate-800 px-4 py-2 rounded-md text-sm font-semibold mb-6">
               <Package className="w-4 h-4" />
-              Complete Kit Included
+              Complete Professional Kit
             </div>
-            <h3 className="text-2xl font-bold text-neutral-900 mb-4">
-              Everything you need in one premium package
+            <h3 className="text-3xl font-serif text-slate-900 mb-4">
+              Comprehensive Storage System
             </h3>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Every component designed and tested for professional use, ensuring optimal performance and longevity.
+            </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="space-y-3">
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-slate-900">Included Components</h4>
               {[
-                "✅ Premium bamboo box with magnetic closure",
-                "✅ 3 airtight glass jars with bamboo lids",
-                "✅ Professional-grade stainless steel tools"
+                "Premium bamboo storage box with magnetic closure",
+                "Three airtight glass containers with bamboo lids",
+                "Professional-grade stainless steel accessories"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-neutral-700 font-medium">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-slate-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-slate-700 font-medium">{item}</span>
                 </div>
               ))}
             </div>
-            <div className="space-y-3">
+            <div className="space-y-4">
+              <h4 className="text-lg font-semibold text-slate-900">Technical Features</h4>
               {[
-                "✅ Custom-designed storage compartments", 
-                "✅ Additional premium accessories",
-                "✅ Detailed setup guide included"
+                "Precision-engineered compartment system", 
+                "Sustainable bamboo construction materials",
+                "Complete setup and usage documentation"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <span className="text-neutral-700 font-medium">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-slate-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-slate-700 font-medium">{item}</span>
                 </div>
               ))}
             </div>
@@ -134,19 +127,10 @@ const ProductGallery = () => {
             <Button 
               onClick={handleAmazonRedirect}
               size="lg"
-              className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-10 py-4 text-lg font-bold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-md shadow-lg transition-colors duration-300"
             >
-              🛒 Get Complete Kit on Amazon
-              <ExternalLink className="ml-2 w-5 h-5" />
+              Purchase Complete Kit on Amazon
             </Button>
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-orange-600">4.8/5 on Amazon</span>
-            </div>
           </div>
         </div>
       </div>

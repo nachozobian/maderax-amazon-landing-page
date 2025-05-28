@@ -1,5 +1,5 @@
 
-import { Star, ExternalLink } from "lucide-react";
+import { Star, Award, Shield, CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -23,7 +23,7 @@ const Testimonials = () => {
       { threshold: 0.3 }
     );
 
-    const elements = document.querySelectorAll('.testimonial-card');
+    const elements = document.querySelectorAll('.trust-card');
     elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
@@ -33,27 +33,24 @@ const Testimonials = () => {
     window.open('https://www.amazon.com/dp/B0DPGSRGNV', '_blank');
   };
 
-  const testimonials = [
+  const trustFactors = [
     {
-      name: "Sarah M.",
-      rating: 5,
-      text: "Ordered on Amazon and received it in 2 days with Prime! Quality exceeded my expectations. The bamboo feels premium and all accessories fit perfectly.",
-      verified: "Amazon Verified Purchase",
-      helpful: "47 people found this helpful"
+      icon: <Award className="w-8 h-8" />,
+      title: "Amazon's Choice",
+      description: "Selected by Amazon for quality, value, and customer satisfaction",
+      metric: "Top 1% of products"
     },
     {
-      name: "Mike R.",
-      rating: 5,
-      text: "Amazon's customer service was great when I had questions. The product is exactly as described - beautiful craftsmanship and very functional design.",
-      verified: "Amazon Verified Purchase", 
-      helpful: "32 people found this helpful"
+      icon: <Star className="w-8 h-8" />,
+      title: "Verified Reviews",
+      description: "Consistently high ratings from verified Amazon purchasers",
+      metric: "4.8/5 average rating"
     },
     {
-      name: "Jennifer L.",
-      rating: 5,
-      text: "Fast Amazon delivery and excellent packaging. The Can Maderax is even more beautiful in person. Would definitely recommend buying through Amazon!",
-      verified: "Amazon Verified Purchase",
-      helpful: "28 people found this helpful"
+      icon: <Shield className="w-8 h-8" />,
+      title: "Quality Assurance",
+      description: "Backed by Amazon's comprehensive A-to-Z guarantee protection",
+      metric: "100% satisfaction guarantee"
     }
   ];
 
@@ -61,55 +58,51 @@ const Testimonials = () => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star 
         key={i} 
-        className={`w-4 h-4 ${i < rating ? 'text-orange-400 fill-current' : 'text-neutral-300'}`} 
+        className={`w-4 h-4 ${i < rating ? 'text-slate-800 fill-current' : 'text-slate-300'}`} 
       />
     ));
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-light text-neutral-900 mb-4 tracking-tight">
-            Real <span className="font-bold text-orange-600">Amazon customers</span> love it
+          <h2 className="text-4xl font-serif text-slate-900 mb-6 tracking-tight">
+            Trust & Verification
           </h2>
-          <p className="text-lg text-neutral-600 font-light">
-            Read what verified Amazon buyers are saying about Can Maderax
+          <p className="text-lg text-slate-600 font-medium">
+            Certified quality backed by Amazon's trusted marketplace standards
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          {trustFactors.map((factor, index) => (
             <div 
               key={index}
               data-index={index}
-              className={`testimonial-card bg-neutral-50 border border-neutral-200 p-6 rounded-2xl hover:shadow-lg hover:border-orange-200 transition-all duration-500 group ${
+              className={`trust-card bg-white border border-slate-200 p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-500 ${
                 visibleCards[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="flex items-center gap-2 mb-4">
-                {renderStars(testimonial.rating)}
-                <span className="text-sm font-bold text-orange-600 ml-2">{testimonial.rating}.0</span>
-              </div>
-              
-              <p className="text-neutral-700 mb-4 leading-relaxed font-light italic">
-                "{testimonial.text}"
-              </p>
-              
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-bold text-neutral-900">{testimonial.name}</p>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-slate-100 border border-slate-200 text-slate-700 rounded-lg mb-6">
+                  {factor.icon}
                 </div>
-                <div className="space-y-1">
-                  <p className="text-xs text-green-600 font-medium">
-                    ✓ {testimonial.verified}
-                  </p>
-                  <p className="text-xs text-neutral-500">
-                    👍 {testimonial.helpful}
-                  </p>
+                
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  {factor.title}
+                </h3>
+                
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  {factor.description}
+                </p>
+                
+                <div className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-md">
+                  <CheckCircle className="w-4 h-4 text-slate-600" />
+                  <span className="text-sm font-semibold text-slate-800">{factor.metric}</span>
                 </div>
               </div>
             </div>
@@ -117,21 +110,20 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center space-y-6">
-          <div className="inline-flex items-center gap-6 bg-gradient-to-r from-orange-50 to-amber-50 border border-orange-200 px-8 py-4 rounded-2xl">
+          <div className="inline-flex items-center gap-6 bg-white border border-slate-200 px-8 py-6 rounded-lg shadow-sm">
             <div className="flex items-center gap-1">
               {renderStars(5)}
             </div>
-            <span className="text-2xl font-bold text-orange-600">4.8/5</span>
-            <span className="text-neutral-700 font-medium">on Amazon (200+ reviews)</span>
+            <span className="text-2xl font-bold text-slate-900">4.8/5</span>
+            <span className="text-slate-700 font-medium">200+ verified Amazon reviews</span>
           </div>
 
           <Button 
             onClick={handleAmazonRedirect}
             size="lg"
-            className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-10 py-4 text-lg font-bold rounded-2xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-md shadow-lg transition-colors duration-300"
           >
-            Read All Reviews on Amazon
-            <ExternalLink className="ml-2 w-5 h-5" />
+            View Customer Reviews on Amazon
           </Button>
         </div>
       </div>
