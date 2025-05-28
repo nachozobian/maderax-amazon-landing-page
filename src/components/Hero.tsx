@@ -160,7 +160,7 @@ const Hero = () => {
                     {/* Product video with premium treatment */}
                     <div className="relative overflow-hidden rounded-3xl">
                       <video 
-                        src="/hero-video.mp4"
+                        src="/public/lovable-uploads/videohero.mp4"
                         title="Can Maderax - Artisan bamboo collection"
                         className="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-1000"
                         autoPlay
