@@ -157,12 +157,12 @@ const Hero = () => {
                       </div>
                     </div>
                     
-                    {/* Product image with premium treatment */}
+                    {/* Product image with premium treatment - removed animate-float */}
                     <div className="relative overflow-hidden rounded-3xl">
                       <img 
                         src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
                         alt="Can Maderax - Artisan bamboo collection"
-                        className="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-1000 animate-float"
+                        className="w-full h-auto transform group-hover:scale-[1.03] transition-transform duration-1000"
                       />
                       
                       {/* Subtle overlay for depth */}

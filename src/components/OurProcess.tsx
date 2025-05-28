@@ -132,27 +132,75 @@ const OurProcess = () => {
             ))}
           </div>
           
-          {/* Visual representation */}
+          {/* Visual representation with product images */}
           <div className="relative">
             <div className="relative bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-3xl p-8 border border-gold-matte/20 backdrop-blur-sm">
-              {/* Placeholder for artisan image */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-gold-matte/10 to-wood-dark/10 rounded-2xl flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="font-playfair text-6xl text-gold-matte">🎋</div>
-                  <div className="space-y-2">
-                    <h4 className="font-playfair text-2xl font-medium text-warm-beige">Master Artisan</h4>
-                    <p className="font-inter text-warm-beige/70">Crafting with 15+ years of experience</p>
-                  </div>
-                </div>
+              {/* Main product showcase */}
+              <div className="aspect-[4/5] bg-gradient-to-br from-gold-matte/5 to-wood-dark/5 rounded-2xl overflow-hidden">
+                <img 
+                  src="/lovable-uploads/8b35bc70-7345-48b3-b991-6008c096a6cb.png"
+                  alt="Can Maderax Complete Kit"
+                  className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
+                />
               </div>
               
-              {/* Floating quality indicators */}
-              <div className="absolute -top-4 -right-4 bg-gold-matte text-charcoal px-4 py-2 rounded-2xl text-sm font-inter font-medium shadow-lg rotate-12">
-                Certified Artisan
+              {/* Floating detail images */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-gold-matte/10 to-wood-dark/10 rounded-2xl overflow-hidden border border-gold-matte/20 shadow-lg rotate-12">
+                <img 
+                  src="/lovable-uploads/af03accb-389f-4346-8ac0-343606e34802.png"
+                  alt="Artisan Details"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
-              <div className="absolute -bottom-4 -left-4 bg-wood-dark text-warm-beige px-4 py-2 rounded-2xl text-sm font-inter font-medium shadow-lg -rotate-6">
-                Sustainable Source
+              <div className="absolute -bottom-4 -left-4 w-28 h-28 bg-gradient-to-br from-wood-dark/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20 shadow-lg -rotate-6">
+                <img 
+                  src="/lovable-uploads/24c3f79f-2114-4c2b-9dfe-eda9cba17f71.png"
+                  alt="Premium Finish"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Product gallery showcase */}
+        <div className="mt-24">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="relative group">
+              <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
+                <img 
+                  src="/lovable-uploads/ef648a50-c084-44eb-93aa-b5c524d6df45.png"
+                  alt="Open Box View"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
+                <img 
+                  src="/lovable-uploads/672d8895-d68d-448d-9f11-fd2e7a194077.png"
+                  alt="Interior Craftsmanship"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
+                <img 
+                  src="/lovable-uploads/1c551ee0-0fbc-4417-8b6f-ebb49ef2ce8b.png"
+                  alt="Tool Organization"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
+                <img 
+                  src="/lovable-uploads/b00c5d1c-153a-417c-b59b-b15dd7f67932.png"
+                  alt="Premium Components"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
             </div>
           </div>
