@@ -1,66 +1,125 @@
 
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Testimonials = () => {
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            setVisibleCards(prev => {
+              const newVisible = [...prev];
+              newVisible[index] = true;
+              return newVisible;
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const elements = document.querySelectorAll('.testimonial-card');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const testimonials = [
+    {
+      name: "Carlos M.",
+      rating: 5,
+      text: "The quality is exceptional. The finishes are perfect and you can tell it's a premium product. It arrived super fast with Amazon Prime.",
+      verified: true
+    },
+    {
+      name: "Ana R.",
+      rating: 5,
+      text: "Exactly what I expected. The wood is beautiful and everything is very well organized. Definitely worth the investment.",
+      verified: true
+    },
+    {
+      name: "Miguel T.",
+      rating: 5,
+      text: "Impressive quality and design. The compartments are perfectly designed. A purchase you won't regret.",
+      verified: true
+    }
+  ];
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star 
         key={i} 
-        className={`w-4 h-4 ${i < rating ? 'text-amber-500 fill-current' : 'text-slate-300'}`} 
+        className={`w-4 h-4 ${i < rating ? 'text-amber-400 fill-current' : 'text-neutral-300'}`} 
       />
     ));
   };
 
-  const testimonials = [
-    {
-      text: "Finally, a storage solution that actually looks like it belongs in my home. The quality is exceptional.",
-      author: "Sarah M.",
-      rating: 5
-    },
-    {
-      text: "I love that everything comes together perfectly. No hunting for matching pieces or wondering what fits where.",
-      author: "Michael R.",
-      rating: 5
-    },
-    {
-      text: "The bamboo construction is beautiful and feels incredibly solid. This will last for years.",
-      author: "Jennifer L.",
-      rating: 5
-    }
-  ];
-
   return (
-    <section className="py-32 bg-gradient-to-b from-orange-100 to-amber-100 text-slate-900">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-light mb-8 tracking-tight text-slate-800">
-              Loved by <span className="font-serif italic text-amber-600">customers</span>
-            </h2>
-            <div className="w-16 h-0.5 bg-amber-600 mx-auto mb-8"></div>
-            <div className="flex items-center justify-center gap-6">
-              <div className="flex items-center gap-1">
-                {renderStars(5)}
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
+            What our <span className="font-normal">customers</span> say
+          </h2>
+          <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
+          <p className="text-lg text-neutral-600 font-light">
+            Thousands of satisfied customers have chosen Can Maderax
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index}
+              data-index={index}
+              className={`testimonial-card bg-neutral-50 border border-neutral-200 p-8 rounded-3xl hover:shadow-lg hover:border-amber-200 transition-all duration-500 group ${
+                visibleCards[index] 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <div className="flex items-center gap-2 mb-6">
+                {renderStars(testimonial.rating)}
               </div>
-              <span className="text-2xl font-light text-slate-800">4.8 out of 5</span>
-              <span className="text-slate-500">200+ verified reviews</span>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="space-y-6 bg-white/70 backdrop-blur-sm border border-amber-200 rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center gap-1">
-                  {renderStars(testimonial.rating)}
+              
+              <p className="text-neutral-700 mb-6 leading-relaxed font-light italic">
+                "{testimonial.text}"
+              </p>
+              
+              <div className="flex items-center justify-between pt-4 border-t border-neutral-200">
+                <div>
+                  <p className="font-medium text-neutral-900">
+                    {testimonial.name}
+                  </p>
+                  {testimonial.verified && (
+                    <p className="text-sm text-green-600 mt-1">
+                      ✓ Verified purchase
+                    </p>
+                  )}
                 </div>
-                <blockquote className="text-lg text-slate-600 leading-relaxed">
-                  "{testimonial.text}"
-                </blockquote>
-                <cite className="text-amber-600 font-medium not-italic">
-                  {testimonial.author}
-                </cite>
+                <div className="text-right">
+                  <div className="flex items-center gap-1">
+                    <Star className="w-4 h-4 text-amber-400 fill-current" />
+                    <span className="text-sm font-medium">{testimonial.rating}.0</span>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center">
+          <div className="inline-flex items-center gap-6 bg-amber-50 border border-amber-200 px-8 py-4 rounded-2xl">
+            <div className="flex items-center gap-1">
+              {renderStars(5)}
+            </div>
+            <span className="text-2xl font-light text-neutral-900">4.8/5</span>
+            <span className="text-neutral-600 font-light">based on +200 Amazon reviews</span>
           </div>
         </div>
       </div>

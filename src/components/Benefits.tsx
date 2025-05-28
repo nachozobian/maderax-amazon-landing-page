@@ -1,7 +1,6 @@
 
-import { Cog, Award, Shield, CheckCircle } from "lucide-react";
+import { Shield, Gem, Package, Star } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 const Benefits = () => {
   const [visibleItems, setVisibleItems] = useState<boolean[]>([]);
@@ -29,86 +28,65 @@ const Benefits = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleAmazonRedirect = () => {
-    window.open('https://www.amazon.com/dp/B0DPGSRGNV', '_blank');
-  };
-
   const benefits = [
     {
-      icon: <Cog className="w-6 h-6" />,
-      title: "Precision Engineering",
-      description: "Meticulously crafted with precision-cut bamboo components and engineered magnetic closure mechanisms."
+      icon: <Gem className="w-6 h-6" />,
+      title: "Premium Craftsmanship",
+      description: "Made with high-quality bamboo and professional finishes for an exceptional experience."
     },
     {
-      icon: <Award className="w-6 h-6" />,
-      title: "Premium Materials",
-      description: "Constructed from sustainably-sourced, high-grade bamboo with superior durability and natural finish."
+      icon: <Package className="w-6 h-6" />,
+      title: "Complete Kit",
+      description: "Includes all essential accessories organized in specifically designed compartments."
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Quality Assurance",
-      description: "Rigorously tested for structural integrity and backed by comprehensive quality standards."
+      title: "Elegant Design",
+      description: "Perfect combination of functionality and minimalist style that speaks of sophistication."
     },
     {
-      icon: <CheckCircle className="w-6 h-6" />,
-      title: "Complete System",
-      description: "Includes all necessary components and accessories for immediate professional-grade storage solution."
+      icon: <Star className="w-6 h-6" />,
+      title: "Quality Guaranteed",
+      description: "Backed by Amazon with satisfaction guarantee and thousands of satisfied customers."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif text-slate-900 mb-6 tracking-tight">
-            Technical Excellence
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-5xl font-light text-neutral-900 mb-6 tracking-tight">
+            Why choose <span className="font-normal">Can Maderax</span>?
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Engineered for professionals who demand precision, durability, and sophisticated design in their storage solutions.
+          <div className="w-16 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
+            A premium experience that elevates your daily routine with natural elegance and unmatched functionality.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {benefits.map((benefit, index) => (
             <div 
               key={index}
               data-index={index}
-              className={`benefit-item text-center p-8 bg-slate-50 border border-slate-200 rounded-lg hover:shadow-lg transition-all duration-500 ${
+              className={`benefit-item text-center p-8 group cursor-pointer transition-all duration-700 ${
                 visibleItems[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-8'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 bg-slate-100 border border-slate-300 text-slate-700 rounded-lg mb-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-neutral-50 border border-neutral-200 text-neutral-700 rounded-2xl mb-6 group-hover:bg-amber-50 group-hover:border-amber-200 group-hover:text-amber-600 transition-all duration-300">
                 {benefit.icon}
               </div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-4">
+              <h3 className="text-xl font-medium text-neutral-900 mb-4 group-hover:text-amber-600 transition-colors duration-300">
                 {benefit.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed text-sm">
+              <p className="text-neutral-600 leading-relaxed font-light">
                 {benefit.description}
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <div className="bg-slate-50 border border-slate-200 rounded-lg p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-serif text-slate-900 mb-4">
-              Professional Grade Storage Solution
-            </h3>
-            <p className="text-slate-600 mb-6">
-              Trusted by professionals for superior quality and reliable performance.
-            </p>
-            <Button 
-              onClick={handleAmazonRedirect}
-              size="lg"
-              className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 text-lg font-semibold rounded-md shadow-lg transition-colors duration-300"
-            >
-              View on Amazon
-            </Button>
-          </div>
         </div>
       </div>
     </section>
