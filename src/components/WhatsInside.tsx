@@ -79,56 +79,75 @@ const WhatsInside = () => {
               }`}
               data-index="0"
             >
-              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-8 shadow-lg">
+              <div className="relative overflow-hidden rounded-3xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-100/50 to-orange-100/30"></div>
                 <img 
                   src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
                   alt="Can Maderax Complete Kit"
-                  className="w-full h-auto"
+                  className="w-full h-auto relative z-10 drop-shadow-2xl"
                 />
               </div>
             </div>
           </div>
 
-          {/* Detail Images */}
-          <div className="grid md:grid-cols-2 gap-16">
-            <div 
-              className={`reveal-item transition-all duration-1000 delay-200 ${
-                visibleImages[1] 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-[30px]'
-              }`}
-              data-index="1"
-            >
-              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-6 shadow-lg">
-                <img 
-                  src="/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png"
-                  alt="Interior organization system"
-                  className="w-full h-auto rounded-lg"
-                />
+          {/* Reorganized Detail Images */}
+          <div className="space-y-20">
+            {/* First Detail Image - Left aligned */}
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+              <div 
+                className={`lg:col-span-3 reveal-item transition-all duration-1000 delay-200 ${
+                  visibleImages[1] 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-[30px]'
+                }`}
+                data-index="1"
+              >
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 p-2">
+                  <img 
+                    src="/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png"
+                    alt="Interior organization system"
+                    className="w-full h-auto rounded-2xl drop-shadow-xl"
+                  />
+                </div>
               </div>
-              <p className="text-slate-500 mt-6 text-center">
-                Precision-engineered interior organization
-              </p>
+              <div className="lg:col-span-2 space-y-6">
+                <h4 className="text-2xl font-light text-slate-800">
+                  Precision Organization
+                </h4>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Every compartment is meticulously designed to house its contents perfectly. 
+                  No wasted space, no loose parts.
+                </p>
+              </div>
             </div>
-            
-            <div 
-              className={`reveal-item transition-all duration-1000 delay-400 ${
-                visibleImages[2] 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-[30px]'
-              }`}
-              data-index="2"
-            >
-              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-6 shadow-lg">
-                <img 
-                  src="/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png"
-                  alt="Complete accessory kit"
-                  className="w-full h-auto rounded-lg"
-                />
+
+            {/* Second Detail Image - Right aligned */}
+            <div className="grid lg:grid-cols-5 gap-12 items-center">
+              <div className="lg:col-span-2 space-y-6 lg:order-1">
+                <h4 className="text-2xl font-light text-slate-800">
+                  Complete Accessory Kit
+                </h4>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Professional-grade tools and containers, all included. 
+                  Nothing extra to buy, nothing missing.
+                </p>
               </div>
-              <p className="text-slate-500 mt-6 text-center">
-                Everything included, nothing extra needed
-              </p>
+              <div 
+                className={`lg:col-span-3 lg:order-2 reveal-item transition-all duration-1000 delay-400 ${
+                  visibleImages[2] 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-[30px]'
+                }`}
+                data-index="2"
+              >
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 p-2">
+                  <img 
+                    src="/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png"
+                    alt="Complete accessory kit"
+                    className="w-full h-auto rounded-2xl drop-shadow-xl"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
