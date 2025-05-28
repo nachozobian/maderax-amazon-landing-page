@@ -170,7 +170,7 @@ const OurProcess = () => {
             <div className="relative group">
               <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
                 <img 
-                  src="/lovable-uploads/ef648a50-c084-44eb-93aa-b5c524d6df45.png"
+                  src="/lovable-uploads/upper-box-view.jpg"
                   alt="Open Box View"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -179,7 +179,7 @@ const OurProcess = () => {
             <div className="relative group">
               <div className="aspect-square bg-gradient-to-br from-warm-beige/10 to-gold-matte/10 rounded-2xl overflow-hidden border border-gold-matte/20">
                 <img 
-                  src="/lovable-uploads/672d8895-d68d-448d-9f11-fd2e7a194077.png"
+                  src="/lovable-uploads/brush-picture.jpg"
                   alt="Interior Craftsmanship"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
