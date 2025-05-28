@@ -1,20 +1,15 @@
 
 import Hero from "@/components/Hero";
-import Benefits from "@/components/Benefits";
-import ProductGallery from "@/components/ProductGallery";
-import Testimonials from "@/components/Testimonials";
-import FinalCTA from "@/components/FinalCTA";
+import BrandValues from "@/components/BrandValues";
+import FeaturedProduct from "@/components/FeaturedProduct";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      {/* SEO Meta tags will be handled by updating the HTML head */}
+    <div className="min-h-screen bg-zinc-900">
       <Hero />
-      <Benefits />
-      <ProductGallery />
-      <Testimonials />
-      <FinalCTA />
+      <BrandValues />
+      <FeaturedProduct />
       <Footer />
     </div>
   );
