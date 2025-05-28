@@ -35,16 +35,16 @@ const WhatsInside = () => {
   ];
 
   return (
-    <section className="py-32 bg-zinc-900 text-white">
+    <section className="py-32 bg-gradient-to-b from-orange-50 to-amber-50 text-slate-900">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <h2 className="text-5xl lg:text-6xl font-light mb-8 tracking-tight">
-              What's <span className="font-serif italic text-amber-400">Inside</span>
+            <h2 className="text-5xl lg:text-6xl font-light mb-8 tracking-tight text-slate-800">
+              What's <span className="font-serif italic text-amber-600">Inside</span>
             </h2>
-            <div className="w-16 h-0.5 bg-amber-400 mx-auto mb-8"></div>
-            <p className="text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+            <div className="w-16 h-0.5 bg-amber-600 mx-auto mb-8"></div>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
               A complete storage ecosystem. No assembly required, no additional purchases needed. 
               Just pure, functional elegance.
             </p>
@@ -57,14 +57,14 @@ const WhatsInside = () => {
               data-index="0"
             >
               <div className="space-y-8">
-                <h3 className="text-3xl font-light text-white">
+                <h3 className="text-3xl font-light text-slate-800">
                   Complete Storage System
                 </h3>
                 <div className="space-y-6">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-1 h-1 bg-amber-400 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-lg text-zinc-300 leading-relaxed">{feature}</p>
+                      <div className="w-1 h-1 bg-amber-600 rounded-full mt-3 flex-shrink-0"></div>
+                      <p className="text-lg text-slate-600 leading-relaxed">{feature}</p>
                     </div>
                   ))}
                 </div>
@@ -79,11 +79,13 @@ const WhatsInside = () => {
               }`}
               data-index="0"
             >
-              <img 
-                src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
-                alt="Can Maderax Complete Kit"
-                className="w-full h-auto"
-              />
+              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-8 shadow-lg">
+                <img 
+                  src="/lovable-uploads/83f3710b-e2ff-46ad-a45e-4d190db0f351.png"
+                  alt="Can Maderax Complete Kit"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
 
@@ -97,12 +99,14 @@ const WhatsInside = () => {
               }`}
               data-index="1"
             >
-              <img 
-                src="/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png"
-                alt="Interior organization system"
-                className="w-full h-auto"
-              />
-              <p className="text-zinc-400 mt-6 text-center">
+              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-6 shadow-lg">
+                <img 
+                  src="/lovable-uploads/b0c603a5-da6d-4ece-acb5-55ce45d1f79c.png"
+                  alt="Interior organization system"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <p className="text-slate-500 mt-6 text-center">
                 Precision-engineered interior organization
               </p>
             </div>
@@ -115,12 +119,14 @@ const WhatsInside = () => {
               }`}
               data-index="2"
             >
-              <img 
-                src="/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png"
-                alt="Complete accessory kit"
-                className="w-full h-auto"
-              />
-              <p className="text-zinc-400 mt-6 text-center">
+              <div className="bg-white/50 backdrop-blur-sm border border-amber-200 rounded-2xl p-6 shadow-lg">
+                <img 
+                  src="/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png"
+                  alt="Complete accessory kit"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              <p className="text-slate-500 mt-6 text-center">
                 Everything included, nothing extra needed
               </p>
             </div>
