@@ -83,11 +83,22 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Premium typography settings */
+  .font-playfair {
+    font-feature-settings: "kern" 1, "liga" 1, "swsh" 1;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  .font-inter {
+    font-feature-settings: "kern" 1, "liga" 1, "tnum" 1;
+    font-variant-numeric: tabular-nums;
   }
 }
 
@@ -102,6 +113,31 @@
 
   .animate-scale-in {
     animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Wood grain texture */
+  .wood-texture {
+    background-image: 
+      linear-gradient(90deg, transparent 79px, #8B4513 79px, #8B4513 81px, transparent 81px),
+      linear-gradient(#8B4513 50%, transparent 50%);
+    background-size: 82px 4px;
+    opacity: 0.03;
+  }
+
+  /* Premium shadows */
+  .shadow-premium {
+    box-shadow: 
+      0 4px 6px -1px rgba(139, 69, 19, 0.1),
+      0 2px 4px -1px rgba(139, 69, 19, 0.06),
+      0 20px 25px -5px rgba(26, 26, 26, 0.1),
+      0 10px 10px -5px rgba(26, 26, 26, 0.04);
+  }
+
+  .shadow-premium-lg {
+    box-shadow: 
+      0 10px 15px -3px rgba(139, 69, 19, 0.1),
+      0 4px 6px -2px rgba(139, 69, 19, 0.05),
+      0 25px 50px -12px rgba(26, 26, 26, 0.25);
   }
 }
 
@@ -135,5 +171,12 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Smooth scrolling for better premium feel */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
