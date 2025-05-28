@@ -40,7 +40,7 @@ const ProductGallery = () => {
       alt: "Can Maderax open showing the interior"
     },
     {
-      src: "/lovable-uploads/c0691484-4a29-46d3-a12a-3e4373590fbf.png",
+      src: "/lovable-uploads/15.png",
       alt: "Can Maderax with all accessories"
     },
     {
